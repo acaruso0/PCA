@@ -29,6 +29,10 @@ if __name__ == "__main__":
     print(F"Mutual information between PCA1 and PCA2: {MI12:.3f} Sh")
     print(F"Mutual information between PCA1 and PCA1^2: {MI11sq:.3f} Sh")
 
+    with open("output.dat", 'w') as out:
+        out.write(F"Mutual information between PCA1 and PCA2: {MI12:.3f} Sh\n")
+        out.write(F"Mutual information between PCA1 and PCA1^2: {MI11sq:.3f} Sh\n")
+
     plt.savefig("output.pdf", format="pdf", dpi=300)
     plt.show()
 

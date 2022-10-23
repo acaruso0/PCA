@@ -7,7 +7,9 @@ Then:
 
 This last calculation is performed from the grids of p(x), p(y), and p(x,y), and the number of bins is determined via the Freedman-Diaconis rule.
 
+Plots are saved in "output.pdf" while all calculation results are saved in "output.dat".
+
 # Usage
 usage: python main.py [-h] input
 
-example: python main.py data_coding_exercise.txt
+example: python main.py data\_coding\_exercise.txt
