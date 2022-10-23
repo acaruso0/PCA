@@ -20,9 +20,9 @@ if __name__ == "__main__":
                                         'height_ratios': [2, 2, 5]},
                            constrained_layout=True)
 
-    PlotLogPCA1D(pca1, ax[0], "dodgerblue", "PCA1", bins=30)
-    PlotLogPCA1D(pca2, ax[1], "crimson", "PCA2", bins=30)
-    PlotLogPCA2D(pca1, pca2, ax[2], bins=60)
+    PlotLogPCA1D(pca1, ax[0], "dodgerblue", "PCA1", bins=50)
+    PlotLogPCA1D(pca2, ax[1], "crimson", "PCA2", bins=50)
+    PlotLogPCA2D(pca1, pca2, ax[2], bins=50)
 
     MI12 = GetMutualInfo(pca1, pca2)
     MI11sq = GetMutualInfo(pca1, pca1*pca1)

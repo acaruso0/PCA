@@ -27,11 +27,13 @@ def PlotLogPCA1D(x: np.ndarray, ax: plt.Axes, c: str, lbl: str, bins: int) -> No
     """
     lw = 2
 
-    hist, bin_edges = np.histogram(x, bins=bins, density=True)
+    hist, bin_edges = np.histogram(x, bins=bins)
+    hist = hist/float(np.sum(hist))
+    loghist = -np.log2(hist)
+
     deltaX = (bin_edges[1] - bin_edges[0])/2
     X_bins = bin_edges[:-1] + deltaX
 
-    loghist: np.ndarray = -np.log2(hist)
     ax.bar(X_bins, loghist, width=2*deltaX, edgecolor=c, color='None')
 
     xlim = max(max(x), abs(min(x)))
