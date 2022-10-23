@@ -8,13 +8,7 @@ Then:
 This last calculation is performed from the grids of p(x), p(y), and p(x,y), and the number of bins is determined via the Freedman-Diaconis rule.
 
 # Usage
-usage: Compute first and second PCA components for a given dataset. [-h] input
-
-positional arguments:
-  input       input file containing the dataset to analyze
-
-optional arguments:
-  -h, --help  show this help message and exit
+usage: python main.py [-h] input
 
 # Example
 python main.py data_coding_exercise.txt
