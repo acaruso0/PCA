@@ -10,19 +10,17 @@ def PlotPCA1D(x, ax, color, label, bins=100, entropy=False):
     deltaX = (bin_edges[1] - bin_edges[0])/2
     X_bins = bin_edges[:-1] + deltaX
 
-    #xx, y = KDE1D(x, bins, entropy)
-
     if entropy:
         hist = -np.log2(hist)
 
     ax.bar(X_bins, hist, width=2*deltaX, edgecolor=c, color='None')
-    #ax.plot(xx, y, c=c, lw=lw, linestyle="-")
-
-    ax.plot(x, -0.005 - 0.01 * np.random.random(x.shape[0]), "+k", alpha=0.3)
 
     xlim = max(max(x), abs(min(x)))
     xlim += 0.1*xlim
     ax.set_xlim(-xlim, xlim)
+
+    ax.set_xlabel(F"{label}", fontsize=13)
+    ax.set_ylabel(r"$-\mathrm{log}_2$" + F"[p({label})]", fontsize=13)
 
 def PlotPCA2D(x, y, ax, bins, entropy=False):
     xx, yy, z = KDE2D(x, y, bins, entropy)
@@ -33,8 +31,8 @@ def PlotPCA2D(x, y, ax, bins, entropy=False):
     cset = ax.contour(xx, yy, z, colors='k')
     # Label plot
     ax.clabel(cset, inline=1, fontsize=10)
-    ax.set_xlabel(r"$-\mathrm{log}_2$[p(C1)] (Sh)")
-    ax.set_ylabel(r"$-\mathrm{log}_2$[p(C2)] (Sh)")
+    ax.set_xlabel(r"$-\mathrm{log}_2$[p(PCA1)]", fontsize=13)
+    ax.set_ylabel(r"$-\mathrm{log}_2$[p(PCA2)]", fontsize=13)
 
     #ax.scatter(x, y, c="k", alpha=0.3)
 

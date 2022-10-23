@@ -40,12 +40,5 @@ def GetMutualInfo(v1, v2):
 
     I = Hx + Hy - Hxy
 
-    from sklearn.metrics import mutual_info_score
-
-    Pxy = np.histogram2d(v1, v2, Bxy)[0]
-    mi = mutual_info_score(None, None, contingency=Pxy)
-
-    print(F"Message: {mi}")
-
     return I
 
