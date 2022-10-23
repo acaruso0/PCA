@@ -2,18 +2,6 @@ import numpy as np
 import scipy.stats as st
 
 
-def KDE1D(x, bins, log=False):
-    xmin, xmax = np.min(x), np.max(x)
-    xx = np.linspace(xmin, xmax, bins)
-
-    kernel = st.gaussian_kde(x)
-    y = kernel(xx)
-
-    if log:
-        return xx, -np.log2(y)
-
-    return xx, y
-
 def KDE2D(x, y, bins):
     xmin, xmax = np.min(x), np.max(x)
     ymin, ymax = np.min(y), np.max(y)
