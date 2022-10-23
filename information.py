@@ -1,6 +1,5 @@
 import math
 import numpy as np
-from kde import KDE1D, KDE2D
 
 
 def GetFreedmanDiaconis(v):

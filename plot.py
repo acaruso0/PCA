@@ -1,5 +1,5 @@
 import numpy as np
-from kde import KDE1D, KDE2D
+from kde import KDE2D
 
 
 def PlotLogPCA1D(x, ax, color, label, bins):
