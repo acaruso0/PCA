@@ -11,13 +11,13 @@ class PCA():
 
     def _preprocess(self) -> Tuple[np.ndarray]:
         """
- +      Obtains sorted arrays with eigenvalues and eigenvectors of the covariance
+        Obtains sorted arrays with eigenvalues and eigenvectors of the covariance
         matrix of the variables in the dataset.
- +
- +      Returns
- +      -------
- +      (eigval_sorted, eigvec_sorted) : Tuple[np.ndarray]
- +          Sorted eigenvalues and eigenvectors.
+  
+        Returns
+        -------
+        (eigval_sorted, eigvec_sorted) : Tuple[np.ndarray]
+            Sorted eigenvalues and eigenvectors.
         """
         # Center data onto COM of dataset.
         self._data = self._data - np.mean(self._data, axis=0)
@@ -35,12 +35,12 @@ class PCA():
 
     def _components(self) -> Iterable[np.ndarray]:
         """
- +      Yields the normalized components of the PCA.
- +
- +      Yields
- +      -------
+        Yields the normalized components of the PCA.
+  
+        Yields
+        -------
         PCA_comp : np.ndarray
- +          PCA component.
+            PCA component.
         """
         for n in range(self._dim):
             v = self._eigvec[n]/np.linalg.norm(self._eigvec[n])

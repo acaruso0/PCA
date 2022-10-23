@@ -26,12 +26,12 @@ class Settings(object):
     @property
     def filename(self) -> str:
         """
- +      Filename property.
- +
- +      Returns
- +      -------
+        Filename property.
+  
+        Returns
+        -------
         self._filename : str
- +          Filename.
+            Filename.
         """
         return self._filename
 
