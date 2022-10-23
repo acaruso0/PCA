@@ -10,6 +10,4 @@ This last calculation is performed from the grids of p(x), p(y), and p(x,y), and
 # Usage
 usage: python main.py [-h] input
 
-# Example
-python main.py data_coding_exercise.txt
-
+example: python main.py data_coding_exercise.txt
