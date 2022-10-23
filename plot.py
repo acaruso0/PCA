@@ -18,7 +18,7 @@ def PlotPCA1D(x, ax, color, label, entropy=False):
     ax.bar(X_bins, hist, width=2*deltaX, edgecolor=c, color='None')
     ax.plot(xx, y, c=c, lw=lw, linestyle="-")
 
-    ax.plot(x, -0.005 - 0.01 * np.random.random(x.shape[0]), "+k", c="k", alpha=0.3)
+    ax.plot(x, -0.005 - 0.01 * np.random.random(x.shape[0]), "+k", alpha=0.3)
 
     xlim = max(max(x), abs(min(x)))
     xlim += 0.1*xlim
