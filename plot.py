@@ -67,6 +67,6 @@ def PlotLogPCA2D(x, y, ax, bins):
     cset = ax.contour(xx, yy, logz, colors='k')
     # Label plot
     ax.clabel(cset, inline=1, fontsize=10)
-    ax.set_xlabel(r"$-\mathrm{log}_2$[p(PCA1)]", fontsize=13)
-    ax.set_ylabel(r"$-\mathrm{log}_2$[p(PCA2)]", fontsize=13)
+    ax.set_xlabel("PCA1", fontsize=13)
+    ax.set_ylabel("PCA2", fontsize=13)
 
