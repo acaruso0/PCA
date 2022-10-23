@@ -25,9 +25,9 @@ if __name__ == "__main__":
                            gridspec_kw={'width_ratios': [1],
                                         'height_ratios': [2, 2, 5]})
 
-    PlotPCA1D(pca1, ax[0], "dodgerblue", "PCA1", entropy=True)
-    PlotPCA1D(pca2, ax[1], "crimson", "PCA2", entropy=True)
-    PlotPCA2D(pca1, pca2, ax[2], entropy=True)
+    PlotPCA1D(pca1, ax[0], "dodgerblue", "PCA1", bins=50, entropy=True)
+    PlotPCA1D(pca2, ax[1], "crimson", "PCA2", bins=50, entropy=True)
+    PlotPCA2D(pca1, pca2, ax[2], bins=50, entropy=True)
 
     MI12 = GetMutualInfo(pca1, pca2)
     MI11sq = GetMutualInfo(pca1, pca1*pca1)

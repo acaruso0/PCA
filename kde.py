@@ -2,9 +2,9 @@ import numpy as np
 import scipy.stats as st
 
 
-def KDE1D(x, entropy=False):
+def KDE1D(x, bins=100, entropy=False):
     xmin, xmax = np.min(x), np.max(x)
-    xx = np.linspace(xmin, xmax, 100)
+    xx = np.linspace(xmin, xmax, bins)
 
     kernel = st.gaussian_kde(x)
     y = kernel(xx)
@@ -14,10 +14,10 @@ def KDE1D(x, entropy=False):
 
     return xx, y
 
-def KDE2D(x, y, entropy=False):
+def KDE2D(x, y, bins=100, entropy=False):
     xmin, xmax = np.min(x), np.max(x)
     ymin, ymax = np.min(y), np.max(y)
-    xx, yy = np.mgrid[xmin:xmax:100j, ymin:ymax:100j]
+    xx, yy = np.mgrid[xmin:xmax:bins*1j, ymin:ymax:bins*1j]
 
     pos = np.vstack([xx.ravel(), yy.ravel()])
     val = np.vstack([x, y])

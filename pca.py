@@ -11,7 +11,7 @@ class PCA():
         # Center data onto COM of dataset.
         self._data = self._data - np.mean(self._data, axis=0)
 
-        # Calculate covariance on transposed data. Variables become columns -> rows.
+        # Calculate covariance on transposed data. Variables become: columns -> rows.
         cov = np.cov(self._data.T)
         eigval, eigvec = np.linalg.eig(cov)
 
