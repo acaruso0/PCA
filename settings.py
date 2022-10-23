@@ -1,4 +1,5 @@
 import argparse
+import numpy as np
 
 
 class Settings(object):
@@ -9,7 +10,6 @@ class Settings(object):
 
     def __init__(self):
         self._filename = None
-        self._nats = False
         self.ParseArguments()
 
     def ParseArguments(self):
@@ -17,13 +17,9 @@ class Settings(object):
             "Compute first and second PCA components for a given dataset.")
         parser.add_argument("input", type=str,
                             help="input file containing the dataset to analyze")
-        parser.add_argument("-n", "--nats",
-                            action="store_true",
-                            help="use natural logarithms")
 
         args = parser.parse_args()
         self._filename = args.input
-        self._nats = args.nats
 
         return None
 

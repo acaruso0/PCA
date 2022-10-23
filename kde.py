@@ -2,19 +2,19 @@ import numpy as np
 import scipy.stats as st
 
 
-def KDE1D(x, bins=100, entropy=False):
+def KDE1D(x, bins, log=False):
     xmin, xmax = np.min(x), np.max(x)
     xx = np.linspace(xmin, xmax, bins)
 
     kernel = st.gaussian_kde(x)
     y = kernel(xx)
 
-    if entropy:
+    if log:
         return xx, -np.log2(y)
 
     return xx, y
 
-def KDE2D(x, y, bins=100, entropy=False):
+def KDE2D(x, y, bins):
     xmin, xmax = np.min(x), np.max(x)
     ymin, ymax = np.min(y), np.max(y)
     xx, yy = np.mgrid[xmin:xmax:bins*1j, ymin:ymax:bins*1j]
@@ -24,9 +24,6 @@ def KDE2D(x, y, bins=100, entropy=False):
 
     kernel = st.gaussian_kde(val)
     z = np.reshape(kernel(pos).T, xx.shape)
-
-    if entropy:
-        return xx, yy, -np.log2(z)
 
     return xx, yy, z
 
