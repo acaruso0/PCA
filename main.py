@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 from pca import PCA
 from plot import PlotPCA1D, PlotPCA2D
-from shannon import GetMutualInfo
+from information import GetMutualInfo
 
 
 if __name__ == "__main__":
@@ -21,18 +21,18 @@ if __name__ == "__main__":
     pca1 = pca.GetComponent()
     pca2 = pca.GetComponent()
 
-    fig, ax = plt.subplots(3, 1, figsize=(6, 10),
+    fig, ax = plt.subplots(3, 1, figsize=(5, 9),
                            gridspec_kw={'width_ratios': [1],
                                         'height_ratios': [2, 2, 5]})
 
-    PlotPCA1D(pca1, ax[0], "dodgerblue", "PCA1", bins=50, entropy=True)
-    PlotPCA1D(pca2, ax[1], "crimson", "PCA2", bins=50, entropy=True)
-    PlotPCA2D(pca1, pca2, ax[2], bins=50, entropy=True)
+    PlotPCA1D(pca1, ax[0], "dodgerblue", "PCA1", bins=30, entropy=True)
+    PlotPCA1D(pca2, ax[1], "crimson", "PCA2", bins=30, entropy=True)
+    PlotPCA2D(pca1, pca2, ax[2], bins=60, entropy=True)
 
     MI12 = GetMutualInfo(pca1, pca2)
     MI11sq = GetMutualInfo(pca1, pca1*pca1)
-    print(MI12)
-    print(MI11sq)
+    print(F"Mutual information between PCA1 and PCA2: {MI12:.3f}")
+    print(F"Mutual information between PCA1 and PCA1^2: {MI11sq:.3f}")
 
     plt.show()
 

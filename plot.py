@@ -29,14 +29,12 @@ def PlotPCA2D(x, y, ax, bins, entropy=False):
 
     # Contourf plot
     cfset = ax.contourf(xx, yy, z, cmap='Blues')
-    ## Or kernel density estimate plot instead of the contourf plot
-    #ax.imshow(np.rot90(f), cmap='Blues', extent=[xmin, xmax, ymin, ymax])
     # Contour plot
     cset = ax.contour(xx, yy, z, colors='k')
     # Label plot
     ax.clabel(cset, inline=1, fontsize=10)
-    ax.set_xlabel('Y1')
-    ax.set_ylabel('Y0')
+    ax.set_xlabel(r"$-\mathrm{log}_2$[p(C1)] (Sh)")
+    ax.set_ylabel(r"$-\mathrm{log}_2$[p(C2)] (Sh)")
 
     #ax.scatter(x, y, c="k", alpha=0.3)
 
