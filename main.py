@@ -29,5 +29,6 @@ if __name__ == "__main__":
     print(F"Mutual information between PCA1 and PCA2: {MI12:.3f} Sh")
     print(F"Mutual information between PCA1 and PCA1^2: {MI11sq:.3f} Sh")
 
+    plt.savefig("output.pdf", format="pdf", dpi=300)
     plt.show()
 
