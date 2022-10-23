@@ -24,6 +24,14 @@ class Settings(object):
         return None
 
     @property
-    def filename(self):
+    def filename(self) -> str:
+        """
+ +      Filename property.
+ +
+ +      Returns
+ +      -------
+        self._filename : str
+ +          Filename.
+        """
         return self._filename
 
