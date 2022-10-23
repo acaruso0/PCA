@@ -50,12 +50,12 @@ class PCA():
 
     def GetComponent(self) -> np.ndarray:
         """
- +      Component getter.
- +
- +      Returns
- +      -------
+        Component getter.
+  
+        Returns
+        -------
         next(self._components)
- +          Next component of the PCA.
+            Next component of the PCA.
         """
         return next(self._components)
 
